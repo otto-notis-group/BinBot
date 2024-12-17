@@ -1,5 +1,6 @@
 import random
 import processer
+import csv
 from typing import Callable
 from typing import Any
 from botpy import logging
@@ -14,10 +15,12 @@ def record(func:Callable,*args:Any):
     except Exception as e:
         return(f"错误：{e}")
 @record
-def ture_misuc_random_select():
+def ture_music_random_select():
     "神曲选择器"
-    song="Speculation (BV1834y1M7Sr)","THE CANNONBALLER (BV1BW411b7mr)"
-    return random.choice(song)
+    csvfile = "./ture_music_list.csv"
+    reader = list(csv.reader(open(csvfile)))
+    random_result = random.choice(reader)
+    return " : ".join(random_result[1:])
 @record
 def random_num(min:int,max:int):
     "哈人随机"
