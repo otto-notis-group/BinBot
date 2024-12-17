@@ -29,3 +29,8 @@ def random_num(min:int,max:int):
             return random.randint(min,max) if round(random.uniform(0.0,1.0),2) != 0.24 else 9000 - 17*2
         return random.randint(min,max)
     raise SyntaxError("The Min is Bigger than Max.")
+@record
+def is_that_ao():
+    "I make Touhou otomad, is that okay?"
+    yes_or_no = ["不！我无法忍受你的行为","ao"]
+    return random.choice(yes_or_no)

@@ -1,3 +1,3 @@
 import feature
 
-print(feature.ture_music_random_select)
+print(feature.is_that_ao)
